@@ -6,7 +6,7 @@ RUN python3 -m pip install django psycopg2-binary
 
 COPY app/ /app
 
-RUN mkdir/db
+RUN mkdir /db
 
 WORKDIR /app/mysite
 
