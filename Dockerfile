@@ -4,11 +4,11 @@ RUN  apt update -y && DEBIAN_FRONTEND=interactive && apt install -y python3-pip 
 
 RUN python3 -m pip install django psycopg2-binary
 
-COPY app/ /app
+COPY app/mysite/ /app
 
 RUN mkdir /db
 
-WORKDIR /app/mysite
+WORKDIR /app
 
 ENTRYPOINT ["bash"]
 CMD ["-c", "entrypoint.sh"]
