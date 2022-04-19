@@ -11,4 +11,4 @@ RUN mkdir /db
 WORKDIR /app/mysite
 
 ENTRYPOINT ["bash"]
-CMD ["-c", "entrypoint.sh"]
+CMD ["-c", "./entrypoint.sh"]

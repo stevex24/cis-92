@@ -5,10 +5,17 @@ metadata:
   labels:
     app: mysite
 spec:
+  volumes:
+  - name: db
+    persistentVolumeClaim:
+        claimName: db
   containers:
   - name: mysite
     image: ghcr.io/stevex24/cis-92:main
     imagePullPolicy: Always
+    volumeMounts:
+    - name: db
+      mountPath: /db
     ports:
     - containerPort: 8000
     env:
@@ -20,3 +27,8 @@ spec:
       value: "test"
     - name: DJANGO_SUPERUSER_PASSWORD
       value: "test"
+    resources:
+      limits:
+        cpu: 250m 
+        memory: 512Mi
+        ephemeral-storage: 10Mi
