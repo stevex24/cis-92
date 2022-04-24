@@ -1,23 +1,23 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: mysite
+  name: postgres
   labels:
-    app: mysite
+    app: postgres
 spec:
   volumes:
-  - name: db
+  - name: db1
     persistentVolumeClaim:
-        claimName: db
+        claimName: db1
   containers:
-  - name: mysite
+  - name: postgres
     image: ghcr.io/stevex24/cis-92:main
     imagePullPolicy: Always
     volumeMounts:
-    - name: db
-      mountPath: /db
+    - name: db1
+      mountPath: /db1
     ports:
-    - containerPort: 8000
+    - containerPort: 5432
     env:
     - name: DB_ENGINE
       value: "postgres"
@@ -27,14 +27,6 @@ spec:
       value: "test"
     - name: DJANGO_SUPERUSER_PASSWORD
       value: "testtest"
-    - name: POSTGRES_DB
-      value: "mysitedb"
-    - name: POSTGRES_USER
-      value: "mysiteuser"
-    - name: POSTGRES_PASSWORD
-      value: "mysitepassword"
-    - name: DB_PASSWORD
-      value: "mysitepassword"
     resources:
       limits:
         cpu: 250m 
