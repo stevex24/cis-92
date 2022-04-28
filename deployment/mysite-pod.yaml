@@ -34,7 +34,7 @@ spec:
     - name: POSTGRES_PASSWORD
       value: "mysitepassword"
     - name: DB_PASSWORD
-      value: "mysitepassword"
+      value: "django"
     resources:
       limits:
         cpu: 250m 

@@ -11,7 +11,7 @@ spec:
         claimName: db1
   containers:
   - name: postgres
-    image: ghcr.io/stevex24/cis-92:main
+    image: docker.io/postgres:14
     imagePullPolicy: Always
     volumeMounts:
     - name: db1
@@ -19,6 +19,14 @@ spec:
     ports:
     - containerPort: 5432
     env:
+    - name: POSTGRES_PASSWORD
+      value: mysitepassword
+    - name: POSTGRES_DB
+      value: "mysitedb"
+    - name: POSTGRES_USER
+      value: "mysiteuser"
+    - name: DB_PASSWORD
+      value: "django" 
     - name: DB_ENGINE
       value: "postgres"
     - name: DJANGO_ADMIN_EMAIL
