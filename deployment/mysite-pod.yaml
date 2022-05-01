@@ -21,6 +21,14 @@ spec:
     env:
     - name: DB_ENGINE
       value: "postgres"
+    - name: DB_NAME
+      value: "mysitedb"
+    - name: DB_USER
+      value: "mysiteuser"
+    - name: DB_HOST
+      value: "postgres"
+    - name: DB_PASSWORD
+      value: "mysitepassword"
     - name: DJANGO_ADMIN_EMAIL
       value: "test@test.test"
     - name: DJANGO_ADMIN_USERNAME
@@ -35,6 +43,7 @@ spec:
       value: "mysitepassword"
     - name: DB_PASSWORD
       value: "django"
+
     resources:
       limits:
         cpu: 250m 
