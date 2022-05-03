@@ -35,15 +35,6 @@ spec:
       value: "test"
     - name: DJANGO_SUPERUSER_PASSWORD
       value: "testtest"
-    - name: POSTGRES_DB
-      value: "mysitedb"
-    - name: POSTGRES_USER
-      value: "mysiteuser"
-    - name: POSTGRES_PASSWORD
-      value: "mysitepassword"
-    - name: DB_PASSWORD
-      value: "django"
-
     resources:
       limits:
         cpu: 250m 

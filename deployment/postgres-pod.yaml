@@ -15,26 +15,16 @@ spec:
     imagePullPolicy: Always
     volumeMounts:
     - name: db1
-      mountPath: /db1
+      mountPath: /var/lib/postgresql
     ports:
     - containerPort: 5432
     env:
     - name: POSTGRES_PASSWORD
-      value: mysitepassword
+      value: "mysitepassword"
     - name: POSTGRES_DB
       value: "mysitedb"
     - name: POSTGRES_USER
       value: "mysiteuser"
-    - name: DB_PASSWORD
-      value: "django" 
-    - name: DB_ENGINE
-      value: "postgres"
-    - name: DJANGO_ADMIN_EMAIL
-      value: "test@test.test"
-    - name: DJANGO_ADMIN_USERNAME
-      value: "test"
-    - name: DJANGO_SUPERUSER_PASSWORD
-      value: "testtest"
     resources:
       limits:
         cpu: 250m 
